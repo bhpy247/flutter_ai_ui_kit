@@ -12,6 +12,19 @@ A **production-ready Flutter UI kit** for building beautiful, animated AI chat i
 
 ---
 
+## 🎬 Demo (GIFs)
+
+💡 Visual demos dramatically increase downloads on pub.dev
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_chat_ui.gif" width="220" alt="dark chat demo"/>
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_chat_ui.gif" width="220" alt="light chat demo"/>
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_widget_ui.gif" width="220" alt="light widget demo"/>
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_widget_ui.gif" width="220" alt="dark widget demo"/>
+</p>
+
+---
+
 ## ✨ Features
 
 | Widget | Description |
@@ -31,19 +44,6 @@ A **production-ready Flutter UI kit** for building beautiful, animated AI chat i
 - 📱 Responsive - Android, iOS, Web, macOS, Windows
 - 🧩 Null-safe, lint-friendly, no unnecessary dependencies
 - 📝 Full API documentation
-
----
-
-## 🎬 Demo (GIFs)
-
-💡 Visual demos dramatically increase downloads on pub.dev
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_chat_ui.gif" width="220" alt="dark chat demo"/>
-  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_chat_ui.gif" width="220" alt="light chat demo"/>
-  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_widget_ui.gif" width="220" alt="light widget demo"/>
-  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_widget_ui.gif" width="220" alt="dark widget demo"/>
-</p>
 
 ---
 

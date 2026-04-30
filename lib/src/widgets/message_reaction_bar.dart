@@ -175,13 +175,13 @@ class _ReactionButtonState extends State<_ReactionButton> with SingleTickerProvi
             // color: isSelected ? theme.reactionSelectedColor : theme.promptCardColor,
             borderRadius: BorderRadius.circular(22),
             // border: Border.all(
-            //   color: isSelected ? theme.accentColor.withOpacity(0.5) : theme.borderColor,
+            //   color: isSelected ? theme.accentColor.withValues(alpha:0.5) : theme.borderColor,
             //   width: isSelected ? 1.5 : 1.0,
             // ),
             // boxShadow: isSelected
             //     ? [
             //         BoxShadow(
-            //           color: theme.accentColor.withOpacity(0.15),
+            //           color: theme.accentColor.withValues(alpha:0.15),
             //           blurRadius: 8,
             //           spreadRadius: 1,
             //         ),
@@ -247,7 +247,7 @@ class ReactionCountRow extends StatelessWidget {
               color: isMine ? theme.reactionSelectedColor : theme.assistantBubbleColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isMine ? theme.accentColor.withOpacity(0.4) : theme.borderColor,
+                color: isMine ? theme.accentColor.withValues(alpha:0.4) : theme.borderColor,
               ),
             ),
             child: Row(

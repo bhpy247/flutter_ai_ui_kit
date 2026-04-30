@@ -460,7 +460,7 @@ class _WidgetShowcaseScreenState extends State<_WidgetShowcaseScreen> {
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: (_voiceActive ? Colors.red : theme.accentColor).withOpacity(0.3),
+                          color: (_voiceActive ? Colors.red : theme.accentColor).withValues(alpha:0.3),
                           blurRadius: 12,
                         ),
                       ],

@@ -169,13 +169,13 @@ class _GlassInputFieldState extends State<GlassInputField> with SingleTickerProv
             boxShadow: [
               // Glass ambient shadow
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Colors.black.withValues(alpha:0.08),
                 blurRadius: 20,
                 offset: const Offset(0, -2),
               ),
               // Focus glow
               BoxShadow(
-                color: theme.accentColor.withOpacity(0.18 * _glowOpacity.value),
+                color: theme.accentColor.withValues(alpha:0.18 * _glowOpacity.value),
                 blurRadius: 24,
                 spreadRadius: 2,
               ),
@@ -192,7 +192,7 @@ class _GlassInputFieldState extends State<GlassInputField> with SingleTickerProv
               borderRadius: BorderRadius.circular(radius),
               border: Border.all(
                 color: _isFocused
-                    ? theme.inputFocusBorderColor.withOpacity(0.8)
+                    ? theme.inputFocusBorderColor.withValues(alpha:0.8)
                     : theme.inputBorderColor,
                 width: _isFocused ? 1.5 : 1.0,
               ),
@@ -300,7 +300,7 @@ class _SendButton extends StatelessWidget {
           boxShadow: active
               ? [
                   BoxShadow(
-                    color: theme.accentColor.withOpacity(0.3),
+                    color: theme.accentColor.withValues(alpha:0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 2),
                   ),

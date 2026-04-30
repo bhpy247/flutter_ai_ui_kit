@@ -143,7 +143,7 @@ class _PromptCardState extends State<PromptCard> with SingleTickerProviderStateM
     final bgColor = widget.backgroundColor ?? theme.promptCardColor;
     final hoverColor = widget.hoverColor ?? theme.promptCardHoverColor;
     final iconColor = widget.iconColor ?? theme.accentColor;
-    final iconBg = widget.iconBackgroundColor ?? iconColor.withOpacity(0.1);
+    final iconBg = widget.iconBackgroundColor ?? iconColor.withValues(alpha:0.1);
 
     final effectiveBg = (_isHovered || _isPressed) ? hoverColor : bgColor;
 
@@ -173,13 +173,13 @@ class _PromptCardState extends State<PromptCard> with SingleTickerProviderStateM
                 color: effectiveBg,
                 borderRadius: BorderRadius.circular(radius),
                 border: Border.all(
-                  color: _isHovered ? iconColor.withOpacity(0.35) : theme.borderColor,
+                  color: _isHovered ? iconColor.withValues(alpha:0.35) : theme.borderColor,
                   width: 1.2,
                 ),
                 boxShadow: _isHovered
                     ? [
                         BoxShadow(
-                          color: iconColor.withOpacity(0.12),
+                          color: iconColor.withValues(alpha:0.12),
                           blurRadius: 16,
                           offset: const Offset(0, 4),
                         ),
@@ -214,7 +214,7 @@ class _PromptCardState extends State<PromptCard> with SingleTickerProviderStateM
                           duration: const Duration(milliseconds: 200),
                           child: Icon(
                             Icons.arrow_outward_rounded,
-                            color: iconColor.withOpacity(_isHovered ? 0.9 : 0.4),
+                            color: iconColor.withValues(alpha:_isHovered ? 0.9 : 0.4),
                             size: 16,
                           ),
                         ),

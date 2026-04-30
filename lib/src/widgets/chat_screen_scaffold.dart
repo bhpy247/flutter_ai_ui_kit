@@ -587,7 +587,7 @@ class _EmptyState extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: theme.accentColor.withOpacity(0.35),
+                      color: theme.accentColor.withValues(alpha:0.35),
                       blurRadius: 24,
                       spreadRadius: 2,
                     ),

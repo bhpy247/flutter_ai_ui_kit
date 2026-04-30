@@ -372,7 +372,7 @@ class _MessageContent extends StatelessWidget {
                   color: isUser ? Colors.white : theme.accentColor,
                 ),
                 // backgroundColor: isUser
-                //     ? Colors.black.withOpacity(0.2)
+                //     ? Colors.black.withValues(alpha:0.2)
                 //     : const Color(0xFF2A2B3D),
               ),
 
@@ -417,7 +417,7 @@ class _MessageContent extends StatelessWidget {
   // ) {
   //   final isDark = Theme.of(context).brightness == Brightness.dark;
   //   final codeBg = isUser
-  //       ? Colors.black.withOpacity(0.2)
+  //       ? Colors.black.withValues(alpha:0.2)
   //       : (isDark ? const Color(0xFF1A1B2E) : const Color(0xFFF3F4F6));
   //
   //   final baseStyle = theme.messageTextStyle.copyWith(color: textColor);
@@ -444,7 +444,7 @@ class _MessageContent extends StatelessWidget {
   //       border: Border(
   //         left: BorderSide(color: theme.accentColor, width: 3),
   //       ),
-  //       color: theme.accentColor.withOpacity(0.07),
+  //       color: theme.accentColor.withValues(alpha:0.07),
   //       borderRadius: const BorderRadius.only(
   //         topRight: Radius.circular(8),
   //         bottomRight: Radius.circular(8),
