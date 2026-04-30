@@ -161,7 +161,8 @@ class _BubbleContentState extends State<_BubbleContent> {
 
     return Row(
       mainAxisAlignment: isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      // crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         // ── Assistant avatar (left side) ──────────────────────────────────
         if (!isUser && widget.showAvatar) ...[
