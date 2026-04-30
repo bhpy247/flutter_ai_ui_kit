@@ -94,3 +94,5 @@ and this project follows Semantic Versioning.
 - Advanced message types (images, audio, attachments)
 - Improved accessibility support
 - Performance optimizations
+
+## [0.1.1] - Bug fixes, small improvements, README changes, minor UI tweaks
