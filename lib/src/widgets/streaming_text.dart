@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:markdown_widget/config/configs.dart';
-import 'package:markdown_widget/widget/blocks/container/blockquote.dart';
 import 'package:markdown_widget/widget/blocks/leaf/code_block.dart';
 import 'package:markdown_widget/widget/blocks/leaf/link.dart';
 import 'package:markdown_widget/widget/blocks/leaf/paragraph.dart';
@@ -264,7 +263,7 @@ class _StreamBody extends StatelessWidget {
                   TextSpan(
                     text: '▋',
                     style: style.copyWith(
-                      color: cursorColor.withOpacity(cursorOpacity.value),
+                      color: cursorColor.withValues(alpha: cursorOpacity.value),
                       fontSize: style.fontSize ?? 15,
                     ),
                   ),
@@ -281,7 +280,7 @@ class _StreamBody extends StatelessWidget {
     return Stack(
       children: [
         MarkdownWidget(
-          data: displayText ?? '',
+          data: displayText,
           selectable: true,
           config: MarkdownConfig(
             configs: [
@@ -296,7 +295,7 @@ class _StreamBody extends StatelessWidget {
               CodeConfig(
                 style: style,
                 // textColor: theme.accentColor,
-                // backgroundColor: theme.accentColor.withOpacity(0.1),
+                // backgroundColor: theme.accentColor.withValues(alpha:)(0.1),
                 // fontSize: 13,
                 // fontFamily: 'monospace',
               ),
@@ -332,7 +331,7 @@ class _StreamBody extends StatelessWidget {
                 width: 2,
                 height: 18,
                 decoration: BoxDecoration(
-                  color: cursorColor.withOpacity(cursorOpacity.value),
+                  color: cursorColor.withValues(alpha: cursorOpacity.value),
                   borderRadius: BorderRadius.circular(1),
                 ),
               ),

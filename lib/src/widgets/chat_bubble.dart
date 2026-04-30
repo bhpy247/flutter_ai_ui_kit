@@ -392,7 +392,7 @@ class _MessageContent extends StatelessWidget {
                   decoration: TextDecoration.underline,
                 ),
                 onTap: (url) {
-                  if (url != null) onLinkTap?.call(url);
+                  onLinkTap?.call(url);
                 },
               ),
 
@@ -480,11 +480,11 @@ class _LoadingBubble extends StatelessWidget {
         boxShadow: theme.cardShadow,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ShimmerBox(width: 180, height: 12, borderRadius: 6),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           ShimmerBox(width: 120, height: 12, borderRadius: 6),
         ],
       ),
@@ -506,7 +506,7 @@ class _CopyConfirmOverlay extends StatelessWidget {
       duration: const Duration(milliseconds: 200),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
+          color: Colors.black.withValues(alpha: 0.6),
           borderRadius: BorderRadius.circular(AiUiTheme.of(context).bubbleRadius),
         ),
         child: const Center(
