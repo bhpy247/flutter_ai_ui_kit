@@ -269,7 +269,7 @@ class _StreamBody extends StatelessWidget {
       );
     }
 
-    // Markdown mode — cursor appended as inline text
+    // Markdown mode,cursor appended as inline text
     final displayText = showCursorNow ? '$visible\u200B' : visible;
 
     return Stack(

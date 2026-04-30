@@ -206,7 +206,7 @@ class _ReactionButtonState extends State<_ReactionButton> with SingleTickerProvi
 
 // ─── Compact Inline Reaction Count Row ───────────────────────────────────────
 
-/// Shows active reaction counts on a message bubble — e.g. "👍 3  ❤️ 1".
+/// Shows active reaction counts on a message bubble,e.g. "👍 3  ❤️ 1".
 ///
 /// ```dart
 /// ReactionCountRow(

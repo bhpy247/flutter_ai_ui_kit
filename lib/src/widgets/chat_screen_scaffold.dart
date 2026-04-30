@@ -149,7 +149,7 @@ class ChatScreenScaffold extends StatefulWidget {
     this.emptyStateWidget,
     this.promptCards,
     this.emptyStateTitle = 'How can I help?',
-    this.emptyStateSubtitle = 'Ask me anything — I\'m here to help.',
+    this.emptyStateSubtitle = 'Ask me anything,I\'m here to help.',
     this.enableStreaming = false,
     this.streamingSpeed = const Duration(milliseconds: 25),
     this.showScrollToBottom = true,

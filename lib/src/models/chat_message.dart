@@ -17,7 +17,7 @@ enum MessageContentType {
   /// Plain text or Markdown content.
   text,
 
-  /// Currently streaming — content may be partial.
+  /// Currently streaming,content may be partial.
   streaming,
 
   /// Message is a loading/thinking placeholder.
@@ -54,7 +54,7 @@ class ChatMessage {
   /// Display name of the sender.
   final String? senderName;
 
-  /// Content type — affects rendering behavior.
+  /// Content type,affects rendering behavior.
   final MessageContentType contentType;
 
   /// Reactions added to this message.

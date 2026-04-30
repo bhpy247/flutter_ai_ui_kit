@@ -186,7 +186,7 @@ class AiUiThemeData {
     required this.cardShadow,
   });
 
-  /// Modern light theme — clean white with vivid indigo accent.
+  /// Modern light theme,clean white with vivid indigo accent.
   factory AiUiThemeData.light() {
     const accent = Color(0xFF6366F1);
     const accentSec = Color(0xFF8B5CF6);
@@ -250,7 +250,7 @@ class AiUiThemeData {
     );
   }
 
-  /// Modern dark theme — deep slate with vivid indigo accent.
+  /// Modern dark theme,deep slate with vivid indigo accent.
   factory AiUiThemeData.dark() {
     const accent = Color(0xFF818CF8);
     const accentSec = Color(0xFFA78BFA);

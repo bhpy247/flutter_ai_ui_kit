@@ -183,8 +183,8 @@ class _ChatDemoScreenState extends State<_ChatDemoScreen> {
   static const _demoReplies = [
     "Sure! Here's a simple **Flutter StatefulWidget** example:\n\n```dart\nclass Counter extends StatefulWidget {\n  @override\n  State<Counter> createState() => _CounterState();\n}\n\nclass _CounterState extends State<Counter> {\n  int count = 0;\n  @override\n  Widget build(BuildContext context) {\n    return Text('\$count');\n  }\n}\n```\n\nThis creates a counter that holds state internally.",
     "Great question! **BLoC** (Business Logic Component) is a state management pattern in Flutter that:\n\n- Separates UI from business logic\n- Uses `Stream`s for reactive data flow\n- Makes your app **testable** and **scalable**\n\nThe core idea is: *events go in, states come out*.",
-    "Here are 5 ways to optimise Flutter performance:\n\n1. Use `const` constructors wherever possible\n2. Avoid rebuilding large widget trees — use `RepaintBoundary`\n3. Leverage `ListView.builder` for long lists\n4. Profile with **Flutter DevTools**\n5. Use `isolate`s for heavy computation",
-    "Absolutely! Here's a quick **Dart async** cheat sheet:\n\n```dart\n// Future — single async value\nFuture<String> fetchData() async {\n  await Future.delayed(Duration(seconds: 1));\n  return 'Hello!';\n}\n\n// Stream — multiple async values\nStream<int> countdown() async* {\n  for (int i = 5; i >= 0; i--) {\n    await Future.delayed(Duration(seconds: 1));\n    yield i;\n  }\n}\n```",
+    "Here are 5 ways to optimise Flutter performance:\n\n1. Use `const` constructors wherever possible\n2. Avoid rebuilding large widget trees,use `RepaintBoundary`\n3. Leverage `ListView.builder` for long lists\n4. Profile with **Flutter DevTools**\n5. Use `isolate`s for heavy computation",
+    "Absolutely! Here's a quick **Dart async** cheat sheet:\n\n```dart\n// Future,single async value\nFuture<String> fetchData() async {\n  await Future.delayed(Duration(seconds: 1));\n  return 'Hello!';\n}\n\n// Stream,multiple async values\nStream<int> countdown() async* {\n  for (int i = 5; i >= 0; i--) {\n    await Future.delayed(Duration(seconds: 1));\n    yield i;\n  }\n}\n```",
     "The **pub.dev score** is based on:\n\n| Criterion | Max Points |\n|-----------|------------|\n| Follow Dart conventions | 30 |\n| Provide documentation | 20 |\n| Platform support | 20 |\n| Pass static analysis | 30 |\n\nAim for **140/160** to get the pub points badge! 🏆",
   ];
 
@@ -195,7 +195,7 @@ class _ChatDemoScreenState extends State<_ChatDemoScreen> {
     _messages.add(
       ChatMessage.assistant(
         text:
-            "👋 Welcome to **flutter_ai_ui_kit**! I'm your AI demo assistant.\n\nTry sending a message below — I'll respond with a realistic AI reply demonstrating markdown, code blocks, and streaming!",
+            "👋 Welcome to **flutter_ai_ui_kit**! I'm your AI demo assistant.\n\nTry sending a message below,I'll respond with a realistic AI reply demonstrating markdown, code blocks, and streaming!",
       ),
     );
   }

@@ -8,7 +8,7 @@
 
 [//]: # ([![Dart]&#40;https://img.shields.io/badge/Dart-3.0%2B-blue&#41;]&#40;https://dart.dev&#41;)
 
-A **production-ready Flutter UI kit** for building beautiful, animated AI chat interfaces. Drop it into any project and get a polished AI chat experience in minutes — with full theme support, Markdown rendering, streaming text, and more.
+A **production-ready Flutter UI kit** for building beautiful, animated AI chat interfaces. Drop it into any project and get a polished AI chat experience in minutes,with full theme support, Markdown rendering, streaming text, and more.
 
 ---
 
@@ -28,7 +28,7 @@ A **production-ready Flutter UI kit** for building beautiful, animated AI chat i
 **Plus:**
 - 🌗 Light & dark themes with a single token system
 - 🎞️ Fade-slide, scale-in, pulse, shimmer animations
-- 📱 Responsive — Android, iOS, Web, macOS, Windows
+- 📱 Responsive - Android, iOS, Web, macOS, Windows
 - 🧩 Null-safe, lint-friendly, no unnecessary dependencies
 - 📝 Full API documentation
 
@@ -37,10 +37,13 @@ A **production-ready Flutter UI kit** for building beautiful, animated AI chat i
 ## 🎬 Demo (GIFs)
 
 💡 Visual demos dramatically increase downloads on pub.dev
-![chat-demo-dart](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_chat_ui.gif)
-![chat-demo-light](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_chat_ui.gif)
-![widget-demo-light](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_widget_ui.gif)
-![widget-demo-dark](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_widget_ui.gif)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_chat_ui.gif" width="220" alt="dark chat demo"/>
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_chat_ui.gif" width="220" alt="light chat demo"/>
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_widget_ui.gif" width="220" alt="light widget demo"/>
+  <img src="https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_widget_ui.gif" width="220" alt="dark widget demo"/>
+</p>
 
 ---
 
@@ -353,4 +356,4 @@ Please follow existing code style and add doc comments to all public APIs.
 
 ## 📄 License
 
-MIT License © 2024 — see [LICENSE](LICENSE) for details.
+MIT License © 2024,see [LICENSE](LICENSE) for details.

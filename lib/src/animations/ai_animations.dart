@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// A collection of reusable animated wrappers used internally by
-/// `flutter_ai_ui_kit` — also exported for consumers to build consistent
+/// `flutter_ai_ui_kit`,also exported for consumers to build consistent
 /// transitions in their own UI.
 
 // ─── Custom Curves ────────────────────────────────────────────────────────────
@@ -16,7 +16,7 @@ class AiSpringCurve extends Curve {
   }
 }
 
-/// Anticipation curve — slight pullback before going forward.
+/// Anticipation curve,slight pullback before going forward.
 class AiAnticipateCurve extends Curve {
   const AiAnticipateCurve();
 
@@ -231,7 +231,7 @@ class _PulseWidgetState extends State<PulseWidget> with SingleTickerProviderStat
 
 // ─── Shimmer ─────────────────────────────────────────────────────────────────
 
-/// A shimmer loading effect — use as a placeholder while content loads.
+/// A shimmer loading effect,use as a placeholder while content loads.
 class ShimmerBox extends StatefulWidget {
   final double width;
   final double height;

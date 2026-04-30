@@ -68,7 +68,7 @@ class GlassInputField extends StatefulWidget {
   /// Custom send icon.
   final IconData sendIcon;
 
-  /// Bottom padding — useful to add safe area on iOS.
+  /// Bottom padding,useful to add safe area on iOS.
   final double bottomPadding;
 
   /// Whether the field and buttons are enabled.

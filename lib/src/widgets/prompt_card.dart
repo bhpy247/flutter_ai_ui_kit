@@ -258,7 +258,7 @@ class _PromptCardState extends State<PromptCard> with SingleTickerProviderStateM
   }
 }
 
-/// A horizontally scrollable row of [PromptCard] chips — compact version.
+/// A horizontally scrollable row of [PromptCard] chips,compact version.
 ///
 /// ```dart
 /// PromptChipRow(

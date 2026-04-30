@@ -58,7 +58,7 @@ class VoiceWave extends StatefulWidget {
   /// Corner radius of each bar.
   final double barRadius;
 
-  /// Speed of the animation — smaller = faster.
+  /// Speed of the animation,smaller = faster.
   final Duration tickRate;
 
   /// Total width of the widget. If null, uses [barCount] × ([barWidth] + [barSpacing]).
@@ -102,7 +102,7 @@ class _VoiceWaveState extends State<VoiceWave> with SingleTickerProviderStateMix
 
     _ctrl = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 10), // long — we drive via listener
+      duration: const Duration(seconds: 10), // long,we drive via listener
     );
 
     _ctrl.addListener(_onTick);
