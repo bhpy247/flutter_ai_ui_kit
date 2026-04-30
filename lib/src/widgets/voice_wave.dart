@@ -92,7 +92,7 @@ class _VoiceWaveState extends State<VoiceWave> with SingleTickerProviderStateMix
   late final AnimationController _ctrl;
   final _rng = math.Random();
   List<double> _heights = [];
-  List<double> _targetHeights = [];
+  // List<double> _targetHeights = [];
   List<double> _phases = [];
 
   @override
@@ -112,7 +112,7 @@ class _VoiceWaveState extends State<VoiceWave> with SingleTickerProviderStateMix
 
   void _initBars() {
     _heights = List.generate(widget.barCount, (_) => widget.minBarHeight);
-    _targetHeights = List.generate(widget.barCount, (_) => widget.minBarHeight);
+    // _targetHeights = List.generate(widget.barCount, (_) => widget.minBarHeight);
     _phases = List.generate(
       widget.barCount,
       (i) => (i / widget.barCount) * 2 * math.pi,

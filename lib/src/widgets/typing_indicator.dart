@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/ai_ui_theme.dart';
 import '../animations/ai_animations.dart';
-import '../models/chat_message.dart';
-import '../utils/chat_utils.dart';
 
 /// An animated typing indicator showing three bouncing dots.
 ///
@@ -155,8 +153,8 @@ class _TypingIndicatorState extends State<TypingIndicator> with TickerProviderSt
                                   offset: Offset(0, _bounces[i].value),
                                   child: _Dot(
                                     size: widget.dotSize,
-                                    color: dotColor.withOpacity(
-                                      0.4 + (0.6 * _controllers[i].value),
+                                    color: dotColor.withValues(
+                                      alpha: 0.4 + (0.6 * _controllers[i].value),
                                     ),
                                   ),
                                 ),
@@ -171,7 +169,7 @@ class _TypingIndicatorState extends State<TypingIndicator> with TickerProviderSt
                               widget.label!,
                               style: theme.timestampTextStyle.copyWith(
                                 fontSize: 12,
-                                color: theme.assistantBubbleTextColor.withOpacity(0.6),
+                                color: theme.assistantBubbleTextColor.withValues(alpha: 0.6),
                               ),
                             ),
                           ],
