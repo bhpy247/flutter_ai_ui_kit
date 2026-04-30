@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:markdown_widget/config/configs.dart';
+import 'package:markdown_widget/widget/blocks/container/blockquote.dart';
+import 'package:markdown_widget/widget/blocks/leaf/code_block.dart';
+import 'package:markdown_widget/widget/blocks/leaf/link.dart';
+import 'package:markdown_widget/widget/blocks/leaf/paragraph.dart';
+import 'package:markdown_widget/widget/inlines/code.dart';
+import 'package:markdown_widget/widget/markdown.dart';
 
 import '../models/chat_message.dart';
 import '../theme/ai_ui_theme.dart';
@@ -343,65 +349,115 @@ class _MessageContent extends StatelessWidget {
     }
 
     // Markdown rendering
-    return MarkdownBody(
-      data: message.text,
-      selectable: true,
-      onTapLink: (_, href, __) {
-        if (href != null) onLinkTap?.call(href);
-      },
-      styleSheet: _markdownStyleSheet(context, isUser, textColor, theme),
+    return DefaultTextStyle(
+      style: theme.messageTextStyle.copyWith(color: textColor),
+      child: MarkdownWidget(
+          data: message.text,
+          selectable: true,
+          config: MarkdownConfig(
+            configs: [
+              // Paragraph
+              PConfig(
+                textStyle: theme.messageTextStyle.copyWith(
+                  color: textColor,
+                  height: 1.4,
+                ),
+              ),
+
+              // Inline code
+              CodeConfig(
+                style: theme.messageTextStyle.copyWith(
+                  fontFamily: 'monospace',
+                  fontSize: 13,
+                  color: isUser ? Colors.white : theme.accentColor,
+                ),
+                // backgroundColor: isUser
+                //     ? Colors.black.withOpacity(0.2)
+                //     : const Color(0xFF2A2B3D),
+              ),
+
+              // Code block
+              PreConfig(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1E1F2E),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: const EdgeInsets.all(12),
+              ),
+
+              // Links
+              LinkConfig(
+                style: theme.messageTextStyle.copyWith(
+                  color: isUser ? Colors.white : theme.accentColor,
+                  decoration: TextDecoration.underline,
+                ),
+                onTap: (url) {
+                  if (url != null) onLinkTap?.call(url);
+                },
+              ),
+
+              // Blockquote
+              BlockquoteConfig(
+                textColor: textColor,
+                sideColor: theme.accentColor,
+                sideWith: 3,
+                padding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
+                margin: const EdgeInsets.symmetric(vertical: 6),
+              ),
+            ],
+          )),
     );
   }
 
-  MarkdownStyleSheet _markdownStyleSheet(
-    BuildContext context,
-    bool isUser,
-    Color textColor,
-    AiUiThemeData theme,
-  ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final codeBg = isUser
-        ? Colors.black.withOpacity(0.2)
-        : (isDark ? const Color(0xFF1A1B2E) : const Color(0xFFF3F4F6));
-
-    final baseStyle = theme.messageTextStyle.copyWith(color: textColor);
-
-    return MarkdownStyleSheet(
-      p: baseStyle,
-      h1: baseStyle.copyWith(fontSize: 20, fontWeight: FontWeight.w700),
-      h2: baseStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
-      h3: baseStyle.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
-      strong: baseStyle.copyWith(fontWeight: FontWeight.w700),
-      em: baseStyle.copyWith(fontStyle: FontStyle.italic),
-      code: baseStyle.copyWith(
-        fontFamily: 'monospace',
-        fontSize: 13,
-        backgroundColor: codeBg,
-        color: isUser ? Colors.white : theme.accentColor,
-      ),
-      codeblockDecoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0D0E1A) : const Color(0xFF1E1F2E),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      codeblockPadding: const EdgeInsets.all(12),
-      blockquoteDecoration: BoxDecoration(
-        border: Border(
-          left: BorderSide(color: theme.accentColor, width: 3),
-        ),
-        color: theme.accentColor.withOpacity(0.07),
-        borderRadius: const BorderRadius.only(
-          topRight: Radius.circular(8),
-          bottomRight: Radius.circular(8),
-        ),
-      ),
-      blockquotePadding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
-      listBullet: baseStyle,
-      a: baseStyle.copyWith(
-        color: isUser ? Colors.white : theme.accentColor,
-        decoration: TextDecoration.underline,
-      ),
-    );
-  }
+  // MarkdownStyleSheet _markdownStyleSheet(
+  //   BuildContext context,
+  //   bool isUser,
+  //   Color textColor,
+  //   AiUiThemeData theme,
+  // ) {
+  //   final isDark = Theme.of(context).brightness == Brightness.dark;
+  //   final codeBg = isUser
+  //       ? Colors.black.withOpacity(0.2)
+  //       : (isDark ? const Color(0xFF1A1B2E) : const Color(0xFFF3F4F6));
+  //
+  //   final baseStyle = theme.messageTextStyle.copyWith(color: textColor);
+  //
+  //   return MarkdownStyleSheet(
+  //     p: baseStyle,
+  //     h1: baseStyle.copyWith(fontSize: 20, fontWeight: FontWeight.w700),
+  //     h2: baseStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
+  //     h3: baseStyle.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
+  //     strong: baseStyle.copyWith(fontWeight: FontWeight.w700),
+  //     em: baseStyle.copyWith(fontStyle: FontStyle.italic),
+  //     code: baseStyle.copyWith(
+  //       fontFamily: 'monospace',
+  //       fontSize: 13,
+  //       backgroundColor: codeBg,
+  //       color: isUser ? Colors.white : theme.accentColor,
+  //     ),
+  //     codeblockDecoration: BoxDecoration(
+  //       color: isDark ? const Color(0xFF0D0E1A) : const Color(0xFF1E1F2E),
+  //       borderRadius: BorderRadius.circular(10),
+  //     ),
+  //     codeblockPadding: const EdgeInsets.all(12),
+  //     blockquoteDecoration: BoxDecoration(
+  //       border: Border(
+  //         left: BorderSide(color: theme.accentColor, width: 3),
+  //       ),
+  //       color: theme.accentColor.withOpacity(0.07),
+  //       borderRadius: const BorderRadius.only(
+  //         topRight: Radius.circular(8),
+  //         bottomRight: Radius.circular(8),
+  //       ),
+  //     ),
+  //     blockquotePadding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
+  //     listBullet: baseStyle,
+  //     a: baseStyle.copyWith(
+  //       color: isUser ? Colors.white : theme.accentColor,
+  //       decoration: TextDecoration.underline,
+  //     ),
+  //   );
+  // }
 }
 
 // ─── Loading Bubble ───────────────────────────────────────────────────────────

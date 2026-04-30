@@ -200,7 +200,7 @@ class AiUiThemeData {
       ),
       userBubbleTextColor: Colors.white,
       assistantBubbleTextColor: const Color(0xFF111827),
-      inputBackgroundColor: Colors.white.withOpacity(0.8),
+      inputBackgroundColor: Colors.white.withValues(alpha: 0.8),
       inputBorderColor: const Color(0xFFE5E7EB),
       inputHintColor: const Color(0xFF9CA3AF),
       inputFocusBorderColor: accent,
@@ -242,7 +242,7 @@ class AiUiThemeData {
       cardRadius: 16,
       cardShadow: [
         BoxShadow(
-          color: Colors.black.withOpacity(0.06),
+          color: Colors.black.withValues(alpha: 0.06),
           blurRadius: 16,
           offset: const Offset(0, 4),
         ),

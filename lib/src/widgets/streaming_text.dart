@@ -1,6 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:markdown_widget/config/configs.dart';
+import 'package:markdown_widget/widget/blocks/container/blockquote.dart';
+import 'package:markdown_widget/widget/blocks/leaf/code_block.dart';
+import 'package:markdown_widget/widget/blocks/leaf/link.dart';
+import 'package:markdown_widget/widget/blocks/leaf/paragraph.dart';
+import 'package:markdown_widget/widget/inlines/code.dart';
+import 'package:markdown_widget/widget/markdown.dart';
 import '../theme/ai_ui_theme.dart';
 
 /// A widget that simulates the token-by-token streaming effect of an AI response.
@@ -274,27 +280,46 @@ class _StreamBody extends StatelessWidget {
 
     return Stack(
       children: [
-        MarkdownBody(
-          data: displayText,
+        MarkdownWidget(
+          data: displayText ?? '',
           selectable: true,
-          onTapLink: (_, href, __) {
-            if (href != null) onLinkTap?.call(href);
-          },
-          styleSheet: MarkdownStyleSheet(
-            p: style,
-            strong: style.copyWith(fontWeight: FontWeight.w700),
-            em: style.copyWith(fontStyle: FontStyle.italic),
-            code: style.copyWith(
-              fontFamily: 'monospace',
-              fontSize: 13,
-              backgroundColor: theme.accentColor.withOpacity(0.1),
-              color: theme.accentColor,
-            ),
-            codeblockDecoration: BoxDecoration(
-              color: const Color(0xFF1E1F2E),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            codeblockPadding: const EdgeInsets.all(12),
+          config: MarkdownConfig(
+            configs: [
+              // Paragraph
+              PConfig(
+                textStyle: style,
+                // textColor: style.color,
+                // margin: const EdgeInsets.only(bottom: 8),
+              ),
+
+              // Inline code
+              CodeConfig(
+                style: style,
+                // textColor: theme.accentColor,
+                // backgroundColor: theme.accentColor.withOpacity(0.1),
+                // fontSize: 13,
+                // fontFamily: 'monospace',
+              ),
+
+              // Code block
+              PreConfig(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1E1F2E),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: const EdgeInsets.all(12),
+              ),
+
+              // Links
+              LinkConfig(
+                style: style,
+                onTap: (url) {
+                  if (onLinkTap != null) {
+                    onLinkTap!(url);
+                  }
+                },
+              ),
+            ],
           ),
         ),
         if (showCursorNow)
