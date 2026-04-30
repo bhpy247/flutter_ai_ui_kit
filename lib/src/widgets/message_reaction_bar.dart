@@ -123,7 +123,6 @@ class _ReactionButton extends StatefulWidget {
 class _ReactionButtonState extends State<_ReactionButton> with SingleTickerProviderStateMixin {
   late final AnimationController _ctrl;
   late final Animation<double> _scale;
-  late final Animation<double> _bounce;
 
   @override
   void initState() {
@@ -140,8 +139,6 @@ class _ReactionButtonState extends State<_ReactionButton> with SingleTickerProvi
       TweenSequenceItem(
           tween: Tween(begin: 0.9, end: 1.0).chain(CurveTween(curve: AiCurves.snappy)), weight: 40),
     ]).animate(_ctrl);
-
-    _bounce = _scale; // alias
   }
 
   @override
@@ -160,7 +157,6 @@ class _ReactionButtonState extends State<_ReactionButton> with SingleTickerProvi
 
   @override
   Widget build(BuildContext context) {
-    final theme = widget.theme;
     final isSelected = widget.isSelected;
 
     return GestureDetector(

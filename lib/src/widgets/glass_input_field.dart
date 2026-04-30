@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../theme/ai_ui_theme.dart';
-import '../animations/ai_animations.dart';
 
 /// A modern frosted-glass chat input field with send, attachment, and voice buttons.
 ///
