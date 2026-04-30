@@ -37,6 +37,10 @@ A **production-ready Flutter UI kit** for building beautiful, animated AI chat i
 ## 🎬 Demo (GIFs)
 
 💡 Visual demos dramatically increase downloads on pub.dev
+![chat-demo-dart](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_chat_ui.gif)
+![chat-demo-light](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_chat_ui.gif)
+![widget-demo-light](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/light_mode_widget_ui.gif)
+![widget-demo-dark](https://raw.githubusercontent.com/bhpy247/flutter_ai_ui_kit/main/assets/gif/dark_mode_widget_ui.gif)
 
 ---
 
