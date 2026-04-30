@@ -95,4 +95,8 @@ and this project follows Semantic Versioning.
 - Improved accessibility support
 - Performance optimizations
 
-## [0.1.1] - Bug fixes, small improvements, README changes, minor UI tweaks
+## [0.1.1] - Bug fixes
+-  Small improvements, README changes, minor UI tweaks
+
+## [0.1.2] - Bug fixes
+-  Small improvements, README changes, minor UI tweaks
